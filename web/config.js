@@ -1,4 +1,6 @@
-/* Config locale (ignorée par git). Voir config.example.js. */
+/* Config Supabase versionnée. La clé anon est publique par conception
+ * (lecture seule via RLS : policies SELECT pour public sur commune/document,
+ * aucune écriture). Voir config.example.js pour le gabarit. */
 window.CONFIG = {
   SUPABASE_URL: "https://bbbxovawtpgsvkjfoehn.supabase.co",
   SUPABASE_ANON_KEY:
