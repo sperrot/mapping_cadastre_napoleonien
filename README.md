@@ -19,9 +19,7 @@ d'assemblage, sections, feuilles).
 | Images des plans | **restent chez les archives** (lien sortant) | 0 € |
 
 L'app n'héberge donc **aucune image** : elle indexe et cartographie des liens.
-Le travail lent et non automatisable — retrouver le bon lien par commune dans
-chaque portail (Mnesys, Ligeo, EAD… chaque département diffère) — est destiné à
-être **crowdsourcé** (palier V0.1).
+
 
 ## Arborescence
 
@@ -66,8 +64,7 @@ Pour afficher les liens d'archives, brancher Supabase :
 ## Feuille de route
 
 - **V0.0** ✅ Annuaire cartographique (lecture).
-- **V0.2** Superposition d'emprises approximatives (`ImageOverlay` par bbox).
-- **V0.3** Géoréférencement réel via [Allmaps](https://allmaps.org) (annotations
+- **V0.3** ✅ Géoréférencement réel via [Allmaps](https://allmaps.org) (annotations
   JSON, rendu déformé côté navigateur, sans serveur de tuiles) + sections au
-  zoom fort.
+  zoom fort. Département Seine Saint Denis disponible (Rechercher Sevran,  Aulnay , Drancy, Villepinte ...)
 - **V1** Workflow de validation, couverture multi-départements, exports.
