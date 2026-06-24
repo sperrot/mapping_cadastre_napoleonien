@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:rico="https://www.ica.org/standards/RiC/ontology#"
+>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#RecordResource"/>
+    <rico:title>Plans du cadastre napoléonien (1812-1852)</rico:title>
+    <rdfs:label>Plans du cadastre napoléonien (1812-1852)</rdfs:label>
+    <rico:beginningDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1812</rico:beginningDate>
+    <rico:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1852</rico:endDate>
+    <rico:identifier>3 P 1835 à 3313</rico:identifier>
+    <rico:history>Seine-et-Oise. Direction départementale des contributions directes et du cadastre</rico:history>
+    <rico:history>Dévolution par les Archives départementales des Yvelines et de l'ancienne Seine-et-Oise aux Archives départementales du Val-d'Oise en 1984.  1984-01-01   Dévolution numéro  via  1984-02692 Yvelines. Archives départementales  1984-01-01  Dévolution numéro via Yvelines. Archives départementales 1984-02692  1984-01-01 Dévolution numéroviaYvelines. Archives départementales1984-02692 
+ En mars 1846, des copies des originaux des plans minutes conservés à la Direction des contribution de Seine-et-Oise, service du cadastre, ont été remis aux Archives départementales de Seine-et-Oise et reliés par canton (Argenteuil, Ecouen, Gonesse, L'Isle-Adam, Luzarches, Magny-en-Vexin, Marines, Montmorency et Pontoise). Bien souvent, en raison de la quantité des feuilles, les cantons ont été dédoublés en deux volumes chacun. Un autre exemplaire était destiné aux communes.</rico:history>
+    <rico:hasInstantiation rdf:resource="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc#record_resource_inst"/>
+    <rico:scopeAndContent>Le cadastre napoléonien La nature de ce cadastre, exécuté au frais de l'Etat, est définie par la loi du 15 septembre 1807 et complétée par l'instruction générale du 20 avril 1808. Il est basé sur le principe de classement du sol par section et parcelle, par propriétaire et par nature.Trois supports distincts le caractérisent : les plans qui font l'objet du présent inventaire. Le territoire de chaque commune est cartographié sur un plan de masse, dit aussi tableau d'assemblage, dressé au 1/10 000e ou au 1/20 000e. Celui-ci donne lieu à plusieurs plans de section plus précis, du 1/625e au 1/1 000e, repérés par des lettres. Chaque section est elle-même redécoupée en plusieurs dizaines de parcelles numérotées, les états de sections, registres qui établissent un lien entre une parcelle et un propriétaire à une date donnée, les matrices qui dressent la liste des propriétaires avec en regard l'état de leur patrimoine évoluant au fil du temps. De 1808 à 1815, les travaux ont pu couvrir le quart de la France (soit 9 000 communes, 12 millions d'hectares et 37 millions de parcelles). Mais, après la chute de l'Empire, de 1815 à 1821, les missions d'arpentage ont cessé ou sont devenus plus sporadiques, selon les départements. Enfin, par la loi du 31 juillet 1821, les opérations cadastrales ont repris sur de nouvelles bases simplifiées, sous la responsabilité des départements et communes, jusqu'à leur achèvement en 1850 (1852 dans l'actuel Val-d'Oise avec la création de la commune d'Enghien-les-Bains).   Territoire couvert Toutes les communes du Val-d'Oise sont représentées.</rico:scopeAndContent>
+    <rico:conditionsOfAccess>Archives publiques.  
+ Délai de communicabilité réglementaire : conformément à l'article L213-2 du Code du patrimoine. Restrictions d'accès liées à l'état matériel des documents : conformément au règlement de la salle de lecture en vigueur. 
+ Publiable sur internet</rico:conditionsOfAccess>
+    <rico:conditionsOfUse>Conformément au règlement de la salle de lecture en vigueur.</rico:conditionsOfUse>
+    <rico:hasOrHadSubject rdf:resource="https://francearchives.gouv.fr/subject/130960350"/>
+    <rico:hasOrHadSubject rdf:resource="https://francearchives.gouv.fr/subject/224635538"/>
+    <rico:hasOrHadManager rdf:resource="https://francearchives.gouv.fr/service/34471"/>
+    <rico:isOrWasDescribedBy rdf:resource="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc#record"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6d07e8e397c06b592ae0a560241a25a8900ea034"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/bc6edfc69ce7317cb9c90758a751b0b750f2104b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e2f7dbf3ca07838dea167b34d80e09e17fe362d1"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/ddc13e9fe23fa8727e8da316240659b6d2732659"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c051ca9e7c9779143a02d48e875d792edce4e0b5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/36f865908685df7d68f34056a8d510565e67f4f8"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/20426dffafc5cf42758ab8ed4d1c42c17da6b060"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6fb6bf348121f4f9444a12434343addc702bc794"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/611fd96afb75b8fc500c91c2137bec5c93da1f8f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/00f5a65f8311c39238a4ded8eab0e7f005f527df"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/417d401830e2c5c382e19e398207e97d72589b28"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/09c6fc669a19bbba62890467aff8a4202567fb10"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/8561cc8858e6e1a97bdb522017abcaabed597e10"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/042e8a5a66ebcefaf36d051cf0919894a725ac15"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/9335390db5c922a457eac1e70d39a7fda88e228a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/29c916b08cd87669c19cb3c72f5279ce287564c8"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/04c535cf9eba2a5cc677c01a0477bb8f8dfb1aa5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/626000a41b16d8d4667525084c3995c5dee122c4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/39f48c713258cabd188c63734dffd58f8b9f7ddc"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/f26d8a2dc81c2d494cf9bf664967ad6846242d6b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/10ce2fdd7f0404870721f321fd1084d8b1cadeb0"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/7340894dac3f7e9fc02cad6efcf0cc0632cbc418"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/a25fdad99947d05e6e5ab12f39c8a55ea09d083f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d889523644f78c03551a157623c8208e5b3ebb2d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c4687dddd3cc240555a003f448e6d3cb268a444d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/ae0deae19b5d76dd91810e18360cdc4985168de3"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/23df393c97809a42b5a0e6b0aa0e789c0b3ab80b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e66205b116e03ac9ebb14cbe4a0bea0b462fe71b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3644c245f226f91ec98b1529aed578b467dc0842"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c8ef06047533578a023896b7f0e0b01d9d6b9fab"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/ed42dfdc049007c8f1660e504ac14b3a108aad2b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d08dc58f22b708f7635034adb882978228933e15"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/df2374ecc93562393e9689d20fff7630400f718a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/045cbc0b3390011c4c1e11e5baf708dd364c2bbd"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/dd2baf4ab9d6fd7316c64caf5589a94e5679acaf"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d70690f75965250053bad9384fa614babd60f32d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/55b03513ca02e604108b204206c9b759250eb5fd"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3f53a7a3dbbb0c585fff5cf77176d9cc45988533"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/931594572e4c5e2fa31dffef542a036199253901"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d8d1ad3099dadcc2c165d54eb6841e66b2a8d0c9"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/03426253e10c840c35c83ebe5738840d909752fd"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/9bd0a2b23c7bece38332186a57b589df735b23da"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6370c7c2e5140de9e328bb288ab5757cd0afc8c5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/626315bd6566715de834e7cd6041703d1f995977"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/f6ab8f0deddc8c4ab909d2fcc3ea7c73881d0262"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6b866948b0666d967bb4db5690194aabba6516d8"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6a88007d202a3d66baf632cfed99fcdfa1d09783"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/8a5341443ab3fe32ddf736d395944d7af60ffddc"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/98a6ef0bf8156f6b4342135cb3e0441354c606f5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/86dde94b47811bf4fb8911a2ccab57ee7d49e552"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/0fb387866a9b37c43e1800ee675c6b5844d2ef16"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/b1877fbf0f0f5e2c5f26781a51802399d27ec283"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/852f39917dd3562deb3fa98d153cbb8123846440"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/ae79256c7da55378ae684efe7cd6ad8e5aeefd66"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/97dd3cbd6b6dffd6e6f5c5a3de1798c5b965dea9"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4624ca998c10a92102a4606ee109483dde77e571"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/697282d067fc82cd77922834478ec814e8a502b3"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/0dfaccee3da2193273287dde775769fb8eedf562"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e069f5bb6f65bd87c496be9393f505c06e8395e5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/771d76ddc2b138d1fd34d0e6f37edfacdeaf2009"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/614bca3f828b16232969d66514d5600f9bd4b8c4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/09a53fbbe1f3dd1d3637e7b83ca2aed3c7aacca2"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/374e3e2ddbd68c4a25778e6a41fc5a5ff8d3fcf6"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e5c95df5416c1ab583eeb56b91dff4241877d178"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4742bf901373d50ea49d45cb2b57b59ee47e5b8d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/020d52a206aab0ec208322b1112edec78417e1f8"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4d384e9601cc76803c159516325d069f0f6e79a5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/8d0c6dd434f470b3918959a295c61de208b8eb64"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d3a98b8e6fd6561894b9694d73451233f149c055"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/a9b3112e4aa1cf8db450657f50c048cbca4ab2bb"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/594aef7964995c947923304d14d7374dff90d1ff"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/1700fd21c2c0670d9ad4bae6c081973a81a34a96"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4b0dfb775acb78b214f935f055b9441692040e43"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/52b510e7c9b499d2dc445cbfc9774c3136a47b1a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/1fddf0be03eedacca97c1f74589661ec8869573f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/02b3f97f26b080a5d182ce9e63f8d8a7469c4dc7"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3220784bb17beccf41727e38d6d963c9c535a89c"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e63ecfe751fd24b772f1bcfa7de633826d0ff2c7"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c0331b0974c99422d8bb3ce6918faeb906572984"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e1092b86197f78716051b47d5800ac076cf665e7"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/630345000fe423a46d81200446feb961e1dfc015"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d774c6c7b82e33cce4f37f7708968b6cf8d2c7ce"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/f111ceba923d36c7a7c4e486011eebf50eb9b4f4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4c1af019db77f885942d1f12e46e67012952bf91"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/f6612bb16ef7cfdf2ce9aa17f9676f7caaf57665"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/85ffc27efdc8ddec933bda8d66b40ded7bcf8020"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6a7a2df73717bbb357bd5c8fd67b620c2e621593"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/a0aeee85f63d8b8e7f4a27f012023fca4d7e53dd"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6d34703b9846b037c8223e20a4a54f49fb4ff972"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3da360ae8f27b98eaddb26aab4cbf9e4ce74aadc"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/1dcda95b42e6ee5b31422bfbd6bcc52b64cf6bdd"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/0bbd953bf204303d0c86db8d6492cfc1550e7d69"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/7f63b038d5a9f36728e65e7a807bdcea0ecb8f38"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/eddd3df24e4ae334c7c7324939af46de1d80aa92"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d1d3e4a70a1645d273eda836cd9d864a77121c16"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/249a858823b8181e4d82b4f46b3c6774dbf70728"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/7be8ca7a8bf50d592e753bb3a3ae17a0e50dc1c8"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/1307466bace97c61c04c641967ec9e8d22a80265"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6510dd8ee03ac79422c41937245ab86bb3b909a2"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c13525c3ae79f9a9c082f215790ee1a1958bba25"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/8b5972e9e40e0cbd0380cd7dc258f5096e0852a3"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/0b9c2c4f19d8227c6f4373bd362f362123d13a70"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c1654e8ed5df8849bdd088cf35d0faa649a6a2a2"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/b6d0480d3ab197268d2475536bad1a3041961202"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/2b2951af97cbbc1844ed7404bd7029049c0d80af"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/caed95c1235d8af3fb1f339d9986c02984c4afdb"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/30f7c8312a9162dc6f749d34fd9b7d58ddf16a9a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/2c114c05c15c37109d07e74a362a4d7e9a14e73a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e1c9ae0004129572792a088f7d7055cf42264467"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/bee0c3d34fadc116233364fbafc5fe879273c26f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/2842e69290bffaa75d98be2bba8851fb17864503"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/8e699d83ed5dbf2b3bb3a943e3b31ddb7261ac1c"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/8ec62501abb6f958f61d89907b190ac4ab1b5932"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/58aee69435e23204ca404729386552a714859e0f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/650664cdba148d5bcebe4ebc8dfeeacf70aafed9"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/5f0a39db00763a8a228c33516205c50009e88709"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4c6343422e8babed9f6ea50d438a85645955a9e6"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/1cc90331897bf8d712b9db0d2eec716e69625d8d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/92ffc8843bf2b20d794d941f764ffd7f08036a4b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/7523f9ac7370bc371a47f2608816b72511fdaf32"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/dc48dd56edccc1be726f6b3c15c5202d7780d0c6"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6278fc1a924e9e381e003f1f274ddc74c9e27c79"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4577d1c4bdc32a6ea19dd5e3620895e9ad085cc4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/eeda7e7ab77fb0b8d59b7cdbf18da78dac05258c"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/a098cb2ffe6447075fcf9cfa7d48fa93e48c6007"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/a10ff6b8eda95c4764d797b64d5640b31425a4fd"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/5263383b912839e8ffb013b0bca3fe27d4b6e855"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/426f841c4399f4514604f499ca93e1cf04831b1b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/88bc4a6553cc6e5cdf626019c8363b54968eaa2f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/de11b3445b75dd766e2169734aa4edadc4d3faaf"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/7439ff1eb3e0fa61fa563690a4555277336ba297"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/bb7841fbe9787ee0d6e5a6aebe2e26431455bc19"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/cb77be4dc872c01cde7019028ff500d51c51fd90"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3f2e66d4c47735ec9ef88a526609f5246f2da168"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/e26b41b96f6827e2cf361adf2eac65384c9fb43b"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/b0dab53eb2dd22311073767b40c8437e535974dd"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/5b92135389360a9fb935840afac440b71bb222c4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/82bba7836403d5406eab40e2a817de14abf02cb0"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/507689128ced2519048144ed0013509624b9faad"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/cbd1733038b466c7cbfc69c83e5f5e4ed1d86859"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/0bfb0991ef49fc328d1c63a239dfe38150dc5568"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/741b63790d34651a61cce99dbfdf2f1f70ca8357"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/0b1d0cdae6c00007b15b455f7790410575732801"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d655857b37d73a0d66c690f93bd58513038a2947"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/f0bb6144adbd8482756f8578cd52d82e5365033d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d50f1895c72f4765d45e820459a206e05d8eae56"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/2b5862da65b6d51b96486deab2c57f138798a426"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/0787046a205798a70af4252bb7cd2830fa5187bc"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/59dd48d60fc0c07429ad4a82d2bfcc6c7b19a640"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d1b1944501f118534fe1425fda51d99c8db6f318"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d14090bd025c70eba2edc5e82a140ad68934e356"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6e255d420903494312866c7ae5f9e38aeef87ca3"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/ee46c9b94a562743b60e464e8a04f3bca4bb083a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d3f005745be0a4cfed7e550b97b92a8fee899c66"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/f2dac0ffb1c86119e9de005a293ede70a2b699e2"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/a4830487e0a9bce7d14918ec965c99ce5f7bc1b2"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/02fd3f7e073bb803230fa6f33f3545eb9b2967b7"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3a54c0fe37616fea1f134f0fee967fda467f21cb"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/5e6feb34bc8c73e222a60d1d75135cb67af5d1f3"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c25232168ec95bb61c3458024a2759856d59ec02"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/7e9bd46b070c56032705b2684376fb66c84f3aad"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/d948527d69f1d827567c6f854153c6f4052baef4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/4d89f5125da30e05055f7c6ed84f000e8f05f0ad"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/98cab22a9d8b23c097046eefdef2859bd5e4a45e"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/a2775b013cf56343e63bc64951689ab3c1aef23c"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/80e720b9e06a9ededbc6da4651d364e0899f16c5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/9ca85c821076d0c6073962a792941d829a5bbd7e"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3cf08f7c9a05e20f9871d456163e7af40f160e6f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/2be77f4a10464627ca22de60211df8b4f62d368d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/21e5ab7e4fbbc05e219431f6e6074c9be968709d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/c8039466757a808a39408d12dababe2376da07bb"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/873113a546743e52154529f4a03279a97630c6ee"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/28806a2b85857e49f45102b71d46164a8b982cc5"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/93ab8cc710e9dd1a5f6a461df3e5e5262ca5d6c4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/b38f76df4528f97d52538a7bc89f95871361257f"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/9c37371a37e57c178be944b39bc701bbfb174c5a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/9ba339551714e8ec7721be406ce3c22fcf89fc35"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/6db408bfde7ebbc61dc4ad0738e40c809bcffa44"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/3af6a8f9ac2ee6591501256d9375e2f258302483"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/630a960e691fd0fcc799ec286745b8f4c66f145d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/7d0cab8816fa656c55901ae04092290c35ce11db"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/fa74561e6224e95478612ee72c9cf7eef3291f0a"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/74bddf5dd669617641e63541b82a5cad3471d3b8"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/31f409aa3673b241e188fb22a08ff7b45012b3c4"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/eab44df78a9d29ade9b8449981baf8a06a10c02d"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/f5e385fb3f5d10cda457ef9f4848880068226eae"/>
+    <rico:includesOrIncluded rdf:resource="https://francearchives.gouv.fr/facomponent/2930b307fb0fe80f64321ffc355af53c609cf870"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc#record_inst1">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#Instantiation"/>
+    <rico:isInstantiationOf rdf:resource="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc#record"/>
+    <dcterms:format>text/csv</dcterms:format>
+    <rdfs:seeAlso rdf:resource="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc.csv"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc#record_resource_inst">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#Instantiation"/>
+    <rico:isInstantiationOf rdf:resource="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc"/>
+    <rico:hasOrHadHolder rdf:resource="https://francearchives.gouv.fr/service/34471"/>
+    <rico:physicalCharacteristics>extent_label 
+ 40 m.l. (1 479 articles)</rico:physicalCharacteristics>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc#record">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#Record"/>
+    <rico:identifier>FRAD095_00020</rico:identifier>
+    <rico:hasDocumentaryFormType rdf:resource="https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#FindingAid"/>
+    <rico:describesOrDescribed rdf:resource="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc"/>
+    <rico:hasInstantiation rdf:resource="https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc#record_inst1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/subject/224635538">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
+  </rdf:Description>
+</rdf:RDF>

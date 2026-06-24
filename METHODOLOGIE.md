@@ -97,7 +97,7 @@ Effet : « Plans du cadastre rénové » (1906-1983) et « Plans d'intendance »
 fuite de feuilles `[s.d.]` du rénové.
 
 ### c) Filtre de période (feuilles)
-Par défaut **1800-1860** (`--year-min` / `--year-max`). Une feuille hors période
+Par défaut **1790-1860** (`--year-min` / `--year-max`). Une feuille hors période
 est écartée. Une feuille **sans date (`[s.d.]`)** n'est gardée **que** si elle
 est dans une branche **déjà validée napoléonienne** (grâce à l'élagage).
 
@@ -152,7 +152,7 @@ IIIF, nouvelles numérisations) **sans re-télécharger tout l'arbre** :
 > napoléonien. Ajout du harvester local `harvest/harvest_francearchives.py`
 > (franchissement du défi JS par token+cookie, export RDF `/{type}/{id}/rdf.xml`,
 > élagage de branches par titre+dates `EXCLUDE_RE`/`period_overlaps`, filtre de
-> période 1800-1860, extraction commune→INSEE / manifeste IIIF / image / licence).
+> période 1790-1860, extraction commune→INSEE / manifeste IIIF / image / licence).
 > Schéma étendu (`migration_0002` : `cote`, `iiif_manifest`, `image_url`,
 > `licence`, `licence_overlay_ok`) : la **licence par institution** pilote
 > l'autorisation d'overlay/georef (SSD = Licence Ouverte ✅, Jura = restrictif ❌).

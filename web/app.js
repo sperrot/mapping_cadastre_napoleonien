@@ -89,7 +89,7 @@ async function fetchDocuments(insee) {
   if (!sb) return null; // Supabase non configuré
   const { data, error } = await sb
     .from("document")
-    .select("type, section_lettre, feuille_num, annee, archive_url, source, source_url, statut")
+    .select("type, section_lettre, feuille_num, annee, cote, archive_url, iiif_manifest, source, source_url, statut")
     .eq("insee", insee)
     .order("type")
     .order("section_lettre", { nullsFirst: true })
@@ -166,12 +166,18 @@ function sourceFooter(docs) {
 
 function docItem(d) {
   let label = "Plan";
-  if (d.type === "section") label = `Section ${d.section_lettre || "?"}`;
+  if (d.type === "section")
+    label = d.section_lettre ? `Section ${d.section_lettre}` : (d.cote || "Section");
   else if (d.type === "feuille")
-    label = `Section ${d.section_lettre || "?"} — feuille ${d.feuille_num ?? "?"}`;
+    label = d.section_lettre
+      ? `Section ${d.section_lettre} — feuille ${d.feuille_num ?? "?"}`
+      : (d.cote || "Feuille");
   else if (d.type === "tableau_assemblage") label = "Tableau d'assemblage";
 
-  const meta = [d.annee, d.statut].filter(Boolean).join(" · ");
+  // cote en meta si elle ne sert pas déjà de libellé
+  const metaParts = [d.annee];
+  if (label !== d.cote) metaParts.push(d.cote);
+  const meta = metaParts.filter(Boolean).join(" · ");
   return `<div class="doc-item">
     <a href="${escape(d.archive_url)}" target="_blank" rel="noopener">${escape(
     label

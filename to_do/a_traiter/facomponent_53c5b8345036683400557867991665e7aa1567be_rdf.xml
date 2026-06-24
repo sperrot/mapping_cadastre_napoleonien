@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:rico="https://www.ica.org/standards/RiC/ontology#"
+>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/facomponent/53c5b8345036683400557867991665e7aa1567be#record_resource_inst1">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#Instantiation"/>
+    <rico:isInstantiationOf rdf:resource="https://francearchives.gouv.fr/facomponent/53c5b8345036683400557867991665e7aa1567be"/>
+    <dcterms:type rdf:resource="http://purl.org/dc/dcmitype/Dataset"/>
+    <dcterms:type rdf:resource="http://purl.org/dc/dcmitype/Image"/>
+    <dcterms:source>https://archives.calvados.fr/ark:/52329/h375vmfxn69t/40fdebd9-d513-4689-b496-b3f8cbae2918</dcterms:source>
+    <dcterms:source>https://archives.calvados.fr/images/40fdebd9-d513-4689-b496-b3f8cbae2918_img-notice.jpg</dcterms:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/facomponent/53c5b8345036683400557867991665e7aa1567be">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#RecordResource"/>
+    <rico:title>Tableau d'assemblage</rico:title>
+    <rdfs:label>Tableau d'assemblage</rdfs:label>
+    <rico:beginningDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1809</rico:beginningDate>
+    <rico:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1809</rico:endDate>
+    <rico:identifier>3P/1930</rico:identifier>
+    <rico:scopeAndContent>1/5000.</rico:scopeAndContent>
+    <rico:hasOrHadSubject rdf:resource="https://francearchives.gouv.fr/subject/224635538"/>
+    <rico:hasOrHadSubject rdf:resource="https://francearchives.gouv.fr/location/293812039"/>
+    <rico:hasInstantiation rdf:resource="https://francearchives.gouv.fr/facomponent/53c5b8345036683400557867991665e7aa1567be#record_resource_inst1"/>
+    <rico:hasInstantiation rdf:resource="https://francearchives.gouv.fr/facomponent/53c5b8345036683400557867991665e7aa1567be#record_resource_inst"/>
+    <rico:hasOrHadManager rdf:resource="https://francearchives.gouv.fr/service/33495"/>
+    <rico:isRecordResourceAssociatedWithRecordResource rdf:resource="https://francearchives.gouv.fr/findingaid/d17231b4a0689ac142534b2a6ee4fc0c190338a1"/>
+    <rico:isOrWasIncludedIn rdf:resource="https://francearchives.gouv.fr/facomponent/d21bc54c4950f8914eebe95832d0df6139ece885"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/facomponent/53c5b8345036683400557867991665e7aa1567be#record_resource_inst">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#Instantiation"/>
+    <rico:isInstantiationOf rdf:resource="https://francearchives.gouv.fr/facomponent/53c5b8345036683400557867991665e7aa1567be"/>
+    <rico:hasOrHadHolder rdf:resource="https://francearchives.gouv.fr/service/33495"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://francearchives.gouv.fr/subject/224635538">
+    <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
+  </rdf:Description>
+</rdf:RDF>

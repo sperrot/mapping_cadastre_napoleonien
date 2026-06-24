@@ -31,6 +31,7 @@ qu'**au 1er run local** du harvester sur un échantillon de feuilles.
 
 | Département | Lien XML arbre | Licence | IIIF dispo | Harvester |
 |---|---|---|---|---|
+| **Val-d'Oise (95)** — FRAD095 | [findingaid « Plans du cadastre napoléonien (1812-1852) » `5570bf08…`](https://francearchives.gouv.fr/findingaid/5570bf08e62dc0163111f6d39f6c2ca96ee67bbc) (racine = branche plans, 187 communes) | ⏳ recon | ⏳ recon | scout recon-only (voir ci-dessous) |
 | **Seine-Saint-Denis (93)** — FRAD093 · *pilote* | [findingaid `2679af1…`](https://francearchives.gouv.fr/findingaid/2679af120dcec5557878b634c3701f842b1d806e) · sous-nœud [facomponent « Plans cadastraux » `8c9077ce…`](https://francearchives.gouv.fr/facomponent/8c9077ce3826a2676417514c55903ae704aff91b) | ✅ OK | ✅ OK | 🟡 **en cours** — `python harvest_francearchives.py 8c9077ce3826a2676417514c55903ae704aff91b facomponent` |
 | **Calvados (14)** — FRAD014 | A→D : [findingaid `d17231b4…`](https://francearchives.gouv.fr/findingaid/d17231b4a0689ac142534b2a6ee4fc0c190338a1)<br>E→Le Me : [findingaid `c89ef2c4…`](https://francearchives.gouv.fr/findingaid/c89ef2c4dfe0d59b57752e97961d4f0b9d067601) | ⏳ à déterminer (local) | ⏳ à déterminer (local) | `python harvest_francearchives.py d17231b4a0689ac142534b2a6ee4fc0c190338a1`<br>`python harvest_francearchives.py c89ef2c4dfe0d59b57752e97961d4f0b9d067601` — **à lancer** |
 

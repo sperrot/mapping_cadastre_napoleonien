@@ -47,7 +47,7 @@ SLEEP = 0.7          # politesse : ~1 req/s
 GEO_API = "https://geo.api.gouv.fr/communes"
 
 # Période retenue (cadastre napoléonien). Surchargée par les arguments CLI.
-YEAR_MIN, YEAR_MAX = 1800, 1860
+YEAR_MIN, YEAR_MAX = 1790, 1860
 
 session = requests.Session()
 session.headers.update(HEADERS)
@@ -86,7 +86,7 @@ def fetch_graph(etype: str, eid: str) -> Graph:
         f"{BASE}/{etype}/{eid}/rdf",
         f"{BASE}/{etype}/{eid}",          # content-negotiation via Accept
     ]
-    for attempt in range(3):                 # retries (transitoire : cookie/débit)
+    for attempt in range(5):                 # retries (transitoire : cookie/débit)
         for url in candidates:
             try:
                 r = get(url, accept="application/rdf+xml")
@@ -98,7 +98,7 @@ def fetch_graph(etype: str, eid: str) -> Graph:
                 _rdf_cache[key] = g
                 time.sleep(SLEEP)
                 return g
-        time.sleep(2 * (attempt + 1))         # backoff avant nouvelle tentative
+        time.sleep(3 * (attempt + 1))         # backoff croissant (3,6,9,12s)
     # Échec persistant : on n'interrompt pas la descente, on saute le nœud.
     sys.stderr.write(f"  ⚠ pas de RDF pour {etype}/{eid} — nœud ignoré\n")
     _rdf_cache[key] = None
@@ -295,6 +295,14 @@ def resolve_location(loc_id: str):
     return label
 
 
+# Communes que geo.api ne resout pas par leur libelle (noms historiques /
+# limites du moteur flou). Libelle normalise -> code INSEE. A enrichir.
+COMMUNE_ALIAS = {
+    "Montreuil-sous-Bois": "93048",   # commune actuelle "Montreuil"
+    "Pierrefitte-sur-Seine": "93059",
+}
+
+
 def insee_of(commune_name: str):
     # normalise : « Aubervilliers (Seine-Saint-Denis, France) » → « Aubervilliers »,
     # « SEVRAN [commune] » → « SEVRAN », « Bobigny, Bondy, … » → « Bobigny »
@@ -304,6 +312,8 @@ def insee_of(commune_name: str):
     name = name.strip(" . ")
     if not name:
         return None
+    if name in COMMUNE_ALIAS:
+        return COMMUNE_ALIAS[name]
     if name in _insee_cache:
         return _insee_cache[name]
     try:
@@ -353,7 +363,8 @@ def sql_escape(v):
     return "'" + str(v).replace("'", "''") + "'"
 
 
-def emit_sql(leaves, out=sys.stdout):
+def emit_sql(leaves, out=None):
+    out = out or sys.stdout          # liaison tardive (sûr sous redirect_stdout)
     cols = ("insee", "type", "annee", "cote", "archive_url", "iiif_manifest",
             "image_url", "source", "source_url", "licence", "licence_overlay_ok", "statut")
     print("-- Généré par harvest_francearchives.py", file=out)

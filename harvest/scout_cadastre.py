@@ -42,20 +42,22 @@ Usage :
 import sys
 import re
 import argparse
-import subprocess
+import warnings
+import contextlib
 from pathlib import Path
 
 from rdflib import URIRef
 
 # ── Réutilisation du harvester (contournement robot + helpers RDF) ───────────
 # Import : harvest_francearchives n'exécute rien à l'import (main() est gardé
-# par `if __name__ == "__main__"`). On récupère sa session anti-robot.
+# par `if __name__ == "__main__"`). On récupère sa session anti-robot ET ses
+# fonctions de moisson (walk/emit_sql) pour rester DANS LE MÊME PROCESS — donc
+# la même session HTTP (utile quand on neutralise la vérif TLS, cf. --insecure).
+import harvest_francearchives as H
 from harvest_francearchives import (
     BASE, RICO, RDFS,
     fetch_graph, eid_of, leaf_manifest, resolve_licence, classify,
 )
-
-HARVESTER = Path(__file__).with_name("harvest_francearchives.py")
 
 # ── Détection de la branche « Plans du cadastre napoléonien » ────────────────
 # Libellés rencontrés (variables selon départements) : « Plans cadastraux »,
@@ -80,8 +82,13 @@ def is_plans_title(t: str) -> bool:
 
 # ── Helpers RDF locaux ───────────────────────────────────────────────────────
 def node(etype: str, eid: str):
-    """Retourne (graph, subj, title, children_eids, manifest) d'un nœud."""
+    """(graph, subj, title, children_eids, manifest) d'un nœud, ou None.
+
+    `fetch_graph` du harvester renvoie None quand aucun export RDF ne répond
+    (et n'écrit qu'un warning) : on propage ce None proprement."""
     g = fetch_graph(etype, eid)
+    if g is None:
+        return None
     subj = URIRef(f"{BASE}/{etype}/{eid}")
     title = next((str(o) for o in g.objects(subj, RICO.title)), None) \
         or next((str(o) for o in g.objects(subj, RDFS.label)), None)
@@ -92,7 +99,10 @@ def node(etype: str, eid: str):
 
 def root_service(etype: str, eid: str):
     """Institution gestionnaire (URI service/NNNN) à la racine de l'arbre."""
-    g, subj, *_ = node(etype, eid)
+    res = node(etype, eid)
+    if not res:
+        return None
+    g, subj, *_ = res
     for o in g.objects(subj, RICO.hasOrHadManager):
         return str(o)
     for o in g.objects(subj, RICO.hasOrHadHolder):
@@ -105,10 +115,10 @@ def peek_manifest(etype: str, eid: str, budget: list):
     if budget[0] <= 0:
         return None
     budget[0] -= 1
-    try:
-        _, _, _, children, manifest = node(etype, eid)
-    except RuntimeError:
+    res = node(etype, eid)
+    if not res:
         return None
+    _, _, _, children, manifest = res
     if manifest and not children:
         return manifest
     if manifest:                 # certains nœuds portent déjà le manifeste
@@ -161,11 +171,10 @@ def scout(etype: str, eid: str, limit: int = 0, max_depth: int = 8):
         if limit and len(targets) >= limit:
             return
         seen.add(eid)
-        try:
-            g, subj, title, children, manifest = node(etype, eid)
-        except RuntimeError as e:
-            sys.stderr.write(f"  ! {e}\n")
+        res = node(etype, eid)
+        if not res:
             return
+        g, subj, title, children, manifest = res
 
         # (1) Nœud nommé « plans/cadastre » avec des enfants → branche isolée.
         if children and is_plans_title(title):
@@ -178,10 +187,10 @@ def scout(etype: str, eid: str, limit: int = 0, max_depth: int = 8):
             for c in children:
                 if limit and len(targets) >= limit:
                     return
-                try:
-                    _, _, c_title, c_children, c_manifest = node("facomponent", c)
-                except RuntimeError:
+                c_res = node("facomponent", c)
+                if not c_res:
                     continue
+                _, _, c_title, c_children, c_manifest = c_res
                 if c_manifest and not c_children and is_plans_title(c_title):
                     record(etype, eid, title or parent_title or c_title,
                            commune=parent_title or title)
@@ -219,24 +228,22 @@ def emit_plan(service, targets, year_min, year_max):
 
 
 def run_harvester(targets, out_path, year_min, year_max):
-    """Exécute le harvester sur chaque branche et concatène le SQL dans out_path."""
+    """Moissonne chaque branche EN-PROCESS (réutilise H.walk/H.emit_sql) et
+    concatène le SQL dans out_path. Reste dans le même process → même session
+    HTTP que le scout (donc même réglage TLS/--insecure)."""
+    H.YEAR_MIN, H.YEAR_MAX = year_min, year_max
     out = Path(out_path)
     with out.open("w", encoding="utf-8") as fh:
         fh.write(f"-- seed cadastre — {len(targets)} branche(s) — "
                  f"période {year_min}-{year_max}\n")
         for i, t in enumerate(targets, 1):
-            sys.stderr.write(f"[{i}/{len(targets)}] harvester ← "
+            sys.stderr.write(f"[{i}/{len(targets)}] harvest ← "
                              f"{t['commune']} ({t['branch_eid']}) …\n")
-            cmd = [sys.executable, str(HARVESTER), t["branch_eid"],
-                   t["branch_etype"], "--year-min", str(year_min),
-                   "--year-max", str(year_max)]
-            r = subprocess.run(cmd, capture_output=True, text=True,
-                               cwd=str(HARVESTER.parent))
+            leaves, seen = [], set()
+            H.walk(t["branch_etype"], t["branch_eid"], leaves, seen)
             fh.write(f"\n-- ── {t['commune']} / {t['branch_title']} "
-                     f"({t['branch_eid']}) ──\n")
-            fh.write(r.stdout)
-            if r.returncode != 0:
-                sys.stderr.write(r.stderr)
+                     f"({t['branch_eid']}) — {len(leaves)} feuille(s) ──\n")
+            H.emit_sql(leaves, out=fh)
     sys.stderr.write(f"\nSeed écrit : {out}\n")
 
 
@@ -248,13 +255,30 @@ def main():
                     choices=["findingaid", "facomponent"])
     ap.add_argument("--limit", type=int, default=0,
                     help="nb max de branches à isoler (0 = tout ; utile pour tester)")
-    ap.add_argument("--year-min", type=int, default=1800)
+    ap.add_argument("--year-min", type=int, default=1790)
     ap.add_argument("--year-max", type=int, default=1860)
     ap.add_argument("--run", action="store_true",
                     help="exécuter le harvester sur les branches isolées")
+    ap.add_argument("--recon-only", action="store_true",
+                    help="reconnaissance seule (défaut) : isole + vérifie licence/IIIF, "
+                         "n'exécute pas le harvester ; ignore --run si présent")
     ap.add_argument("--out", default="seed_cadastre.sql",
                     help="fichier seed SQL produit avec --run")
+    ap.add_argument("--insecure", action="store_true",
+                    help="neutralise la vérif TLS (env derrière proxy/CA manquante)")
     args = ap.parse_args()
+
+    # Console Windows en cp1252 : on force l'UTF-8 pour les emojis du récap.
+    for stream in (sys.stdout, sys.stderr):
+        with contextlib.suppress(Exception):
+            stream.reconfigure(encoding="utf-8")
+
+    if args.insecure:
+        import urllib3
+        warnings.simplefilter("ignore")
+        urllib3.disable_warnings()
+        H.session.verify = False        # session partagée scout + harvester
+        sys.stderr.write("⚠ TLS non vérifié (--insecure).\n")
 
     service, targets = scout(args.etype, args.eid, limit=args.limit)
     if not targets:
@@ -263,7 +287,7 @@ def main():
         sys.exit(2)
 
     emit_plan(service, targets, args.year_min, args.year_max)
-    if args.run:
+    if args.run and not args.recon_only:
         run_harvester(targets, args.out, args.year_min, args.year_max)
 
 
