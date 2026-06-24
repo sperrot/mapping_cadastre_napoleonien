@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastre napoléonien — annuaire cartographié</title>
+
+  <!-- MapLibre GL JS (carte, sans clé d'API) -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+  <!-- Client Supabase (lecture de la table des liens d'archives) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Cadastre napoléonien</h1>
+    <p class="tagline">Annuaire cartographié des plans d'archives départementales — <strong>V0</strong></p>
+  </header>
+
+  <div id="layout">
+    <aside id="panel">
+      <div class="search">
+        <input id="search-input" type="search" placeholder="Rechercher une commune…" autocomplete="off" />
+        <ul id="search-results" hidden></ul>
+      </div>
+
+      <div id="commune-info" class="placeholder">
+        <p>Cherchez une commune ou cliquez sur la carte pour voir les plans du cadastre napoléonien disponibles dans les archives départementales.</p>
+      </div>
+    </aside>
+
+    <main id="map"></main>
+  </div>
+
+  <!-- Copier config.example.js → config.js et renseigner Supabase -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

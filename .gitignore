@@ -1,0 +1,6 @@
+# Config locale (clés Supabase) — copier config.example.js → config.js
+web/config.js
+
+# Divers
+.DS_Store
+Thumbs.db
