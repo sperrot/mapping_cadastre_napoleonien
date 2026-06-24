@@ -116,6 +116,41 @@ header .tagline { margin: 2px 0 0; font-size: .8rem; color: var(--muted); }
 }
 .empty-state strong { color: var(--ink); }
 
+/* --- Géoréférencement (Allmaps) --- */
+.georef {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-height: 22px;
+  margin: 0 0 8px 2px;
+  font-size: .8rem;
+}
+.georef-loading { color: var(--muted); font-style: italic; }
+.georef-badge {
+  color: #2f6b3a;
+  background: #e7f1e8;
+  border: 1px solid #cfe3d2;
+  border-radius: 999px;
+  padding: 1px 9px;
+  font-size: .72rem;
+  font-weight: 600;
+}
+.georef-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+.georef-link:hover { text-decoration: underline; }
+.georef-btn {
+  display: inline-block;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-soft);
+  border-radius: 6px;
+  padding: 3px 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .78rem;
+}
+.georef-btn:hover { background: #e3cdaf; }
+
 .source-note {
   margin-top: 16px;
   padding-top: 10px;

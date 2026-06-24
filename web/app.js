@@ -89,7 +89,7 @@ async function fetchDocuments(insee) {
   if (!sb) return null; // Supabase non configuré
   const { data, error } = await sb
     .from("document")
-    .select("type, section_lettre, feuille_num, annee, cote, archive_url, iiif_manifest, source, source_url, statut")
+    .select("type, section_lettre, feuille_num, annee, cote, archive_url, iiif_manifest, licence_overlay_ok, source, source_url, statut")
     .eq("insee", insee)
     .order("type")
     .order("section_lettre", { nullsFirst: true })
@@ -145,6 +145,64 @@ function renderCommune(c, docs, loading) {
     html += sourceFooter(docs);
   }
   el.innerHTML = html;
+  if (!loading && Array.isArray(docs) && docs.length) hydrateGeoref(el);
+}
+
+/* ------------------------------------------------------------------ *
+ * Géoréférencement via Allmaps (zéro infra : Allmaps stocke + rend)
+ *
+ * - Détection : generateId(manifeste) → annotations.allmaps.org/manifests/{id}
+ * - Déjà calé   → badge + lien Allmaps Viewer (se centre seul sur l'emprise)
+ * - Pas calé    → bouton vers Allmaps Editor, manifeste IIIF pré-saisi
+ * Aucune annotation n'est stockée chez nous en V1 (cf. dump open-data Allmaps
+ * pour un mirroring ultérieur si besoin de curation).
+ * ------------------------------------------------------------------ */
+const editorLink = (manifest) =>
+  `https://editor.allmaps.org/?url=${encodeURIComponent(manifest)}`;
+const viewerLink = (annotationUrl) =>
+  `https://viewer.allmaps.org/?url=${encodeURIComponent(annotationUrl)}`;
+
+// `@allmaps/id` chargé en import() dynamique → app.js reste un script classique.
+// Variant `/sync` (SHA-1 pur-JS) : pas de SubtleCrypto, marche aussi en file://.
+let allmapsIdMod = null;
+const loadAllmapsId = () =>
+  (allmapsIdMod ||= import("https://esm.run/@allmaps/id/sync"));
+
+// manifeste → URL d'annotation (ou null si pas encore géoréférencé). Mis en cache.
+const annotationCache = new Map();
+async function resolveAnnotation(manifest) {
+  if (annotationCache.has(manifest)) return annotationCache.get(manifest);
+  let result = null;
+  try {
+    const { generateId } = await loadAllmapsId();
+    const id = await generateId(manifest);
+    const url = `https://annotations.allmaps.org/manifests/${id}`;
+    const res = await fetch(url);
+    if (res.ok) {
+      const data = await res.json();
+      if ((data.items?.length ?? 0) > 0) result = url;
+    }
+  } catch (e) {
+    console.warn("Allmaps:", e); // hors-ligne / API down → on propose d'éditer
+  }
+  annotationCache.set(manifest, result);
+  return result;
+}
+
+async function hydrateGeoref(root) {
+  for (const block of root.querySelectorAll(".georef[data-manifest]")) {
+    const manifest = block.dataset.manifest;
+    const annotationUrl = await resolveAnnotation(manifest);
+    if (!block.isConnected) return; // commune changée pendant le fetch
+    block.innerHTML = annotationUrl
+      ? `<span class="georef-badge">✓ géoréférencé</span>
+         <a class="georef-link" href="${escape(
+           viewerLink(annotationUrl)
+         )}" target="_blank" rel="noopener">Voir l'overlay ↗</a>`
+      : `<a class="georef-btn" href="${escape(
+          editorLink(manifest)
+        )}" target="_blank" rel="noopener">Géoréférencer ce plan ↗</a>`;
+  }
 }
 
 /* Mention d'attribution (CRPA) : une ligne par source distincte. */
@@ -178,12 +236,22 @@ function docItem(d) {
   const metaParts = [d.annee];
   if (label !== d.cote) metaParts.push(d.cote);
   const meta = metaParts.filter(Boolean).join(" · ");
-  return `<div class="doc-item">
+  let html = `<div class="doc-item">
     <a href="${escape(d.archive_url)}" target="_blank" rel="noopener">${escape(
     label
   )} ↗</a>
     ${meta ? `<span class="meta">${escape(meta)}</span>` : ""}
   </div>`;
+
+  // Géoréférencement Allmaps : seulement sur l'assemblage, avec manifeste IIIF,
+  // et uniquement si la licence autorise l'overlay (règle CRPA). Le statut réel
+  // (déjà géoréférencé ou non) est résolu en asynchrone par hydrateGeoref().
+  if (d.type === "tableau_assemblage" && d.iiif_manifest && d.licence_overlay_ok) {
+    html += `<div class="georef" data-manifest="${escape(d.iiif_manifest)}">
+      <span class="georef-loading">Vérification du géoréférencement…</span>
+    </div>`;
+  }
+  return html;
 }
 
 /* ------------------------------------------------------------------ *
