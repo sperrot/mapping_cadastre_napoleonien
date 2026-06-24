@@ -14,6 +14,17 @@ La **racine elle-même** est déjà la branche « Plans du cadastre napoléonien
 (titre explicite) → le scout l'isole directement, ses 187 enfants sont les
 communes. Pas de finding aid frère à chercher : le fonds tient en un seul arbre.
 
+## ✅ Test live (échantillon)
+
+Feuille [`sample_feuille_TA-1819_bd351c65.xml`](sample_feuille_TA-1819_bd351c65.xml)
+(« Tableau d'assemblage. », cote `3 P 1854`, 1819, Amenucourt) :
+- **IIIF ✅** : `#iiif_manifest` → `https://archives.valdoise.fr/ark:/18127/vta…/manifest`.
+- Image : `dcterms:source` `…/daogrp/0` (⚠️ motif `daogrp`, pas `daoloc` : le
+  harvester ne l'extraira pas tel quel, à élargir si on veut l'`image_url`).
+- **Licence : OK** (confirmée, service 34471 → [`../licences_par_service.md`](../licences_par_service.md)).
+  Le manifeste ne porte **pas** de champ `license` (juste `attribution`) → le
+  harvester renvoie « À vérifier » : surcharger avec la table par service.
+
 ## Commande scout — reconnaissance seule (`--recon-only`)
 
 ```bash

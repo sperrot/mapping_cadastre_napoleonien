@@ -18,6 +18,20 @@ Service FranceArchives : `service/33495` (Archives départementales du Calvados)
 - **Pas** de manifeste IIIF ni de licence à ce niveau → descendre l'arbre.
 - Un `#record` (FindingAid) + une `#record_inst1` (export CSV : `…0338a1.csv`).
 
+## ⚠️ Feuilles Calvados : pas de IIIF (test live)
+
+Échantillons : [`sample_feuille_TA-1829_520f5e70.xml`](sample_feuille_TA-1829_520f5e70.xml),
+[`sample_feuille_TA-1809_53c5b834.xml`](sample_feuille_TA-1809_53c5b834.xml).
+
+- Pas de `#iiif_manifest`. La feuille porte un `dcterms:source` ARK vers la
+  visionneuse AD14 (`https://archives.calvados.fr/ark:/52329/…`) + une vignette
+  `_img-notice.jpg`. **Donc IIIF ❌, mais image numérisée disponible.**
+- Licence : **OK** (confirmée, service 33495 → [`../licences_par_service.md`](../licences_par_service.md)).
+- **Impact harvester** : `harvest_francearchives.py` ne retient une feuille que si
+  `leaf_manifest` trouve un `/manifest` → il **sauterait les feuilles Calvados**.
+  À adapter : accepter une feuille sans manifeste dès qu'elle a un `dcterms:source`
+  ARK (le mettre en `archive_url`/`image_url`, `iiif_manifest = null`).
+
 ## À faire
 
 1. Récupérer les finding aids frères (E→Z) du cadastre FRAD014 sur FranceArchives,
