@@ -1,6 +1,3 @@
-# Config locale (clés Supabase) — copier config.example.js → config.js
-web/config.js
-
 # Sorties générées par le harvester (à régénérer)
 harvest/seed_*.sql
 harvest/*.log

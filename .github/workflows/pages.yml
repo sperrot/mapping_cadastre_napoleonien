@@ -1,11 +1,8 @@
 name: Déploiement GitHub Pages
 
-# Publie le dossier web/ comme site statique. La config Supabase (config.js,
-# gitignorée) est générée au build depuis les secrets du dépôt :
-#   gh secret set SUPABASE_URL
-#   gh secret set SUPABASE_ANON_KEY
-# Si les secrets sont absents, le site se déploie en mode « carte seule »
-# (valeurs vides) — aucune erreur.
+# Publie le dossier web/ comme site statique. La config Supabase est versionnée
+# dans web/config.js (clé anon publique, lecture seule via RLS) → aucun secret,
+# site portable. Le build se contente d'uploader web/ tel quel.
 
 on:
   push:
@@ -29,16 +26,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Générer web/config.js depuis les secrets
-        run: |
-          cat > web/config.js <<EOF
-          window.CONFIG = {
-            SUPABASE_URL: "${{ secrets.SUPABASE_URL }}",
-            SUPABASE_ANON_KEY: "${{ secrets.SUPABASE_ANON_KEY }}",
-          };
-          EOF
-
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
